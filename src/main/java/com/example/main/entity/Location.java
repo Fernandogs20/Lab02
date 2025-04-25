@@ -11,23 +11,22 @@ import java.util.List;
 @Table(name = "locations")
 public class Location {
     @Id
-    @Column(name = "location_id",nullable = false)
-    private Integer id;
-
-    @Column(name = "street_address", length = 40)
+    @Column(name = "street_address")
     private String streetAddress;
 
-    @Column(name = "postal_code", length = 12)
+    @Column(name = "postal_code")
     private String postalCode;
 
-    @Column(name="city",nullable = false, length = 30)
+    @Column(name = "city")
     private String city;
 
-    @Column(name = "state_province", length = 25)
+    @Column(name = "state_province")
     private String stateProvince;
 
     @ManyToOne
-    @JoinColumn(name = "country_id")
+    @JoinColumn(name = "country_id", referencedColumnName = "country_id")
     private Country country;
 
+    // Getters y setters
 }
+

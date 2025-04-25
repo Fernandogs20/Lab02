@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Empleados</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div th:replace="fragments/navbar :: navbar"></div>
+
+<div class="container mt-4">
+    <h2>Lista de Empleados</h2>
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th># de Usuario</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Puesto</th>
+            <th>Departamento</th>
+            <th>Ciudad</th>
+            <th>Código Postal</th>
+            <th>Salario</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emp : ${empleados}">
+            <td th:text="${emp.employeeId}"></td>
+            <td th:text="${emp.firstName}"></td>
+            <td th:text="${emp.lastName}"></td>
+            <td th:text="${emp.jobTitle}"></td>
+            <td th:text="${emp.departmentName}"></td>
+            <td th:text="${emp.city}"></td>
+            <td th:text="${emp.postalCode}"></td>
+            <td th:text="${emp.salary}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.1/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

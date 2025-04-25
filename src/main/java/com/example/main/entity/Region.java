@@ -11,12 +11,9 @@ import java.util.List;
 @Table(name = "regions")
 public class Region {
     @Id
-    @Column(name = "region_id",nullable = false)
-    private Integer id;
+    @Column(name = "region_id", nullable = false)
+    private Integer regionId;
 
-    @Column(name = "region_name", length = 25)
-    private String name;
-
-    @OneToMany(mappedBy = "region", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Country> countries;
+    @Column(name = "region_name")
+    private String regionName;
 }
